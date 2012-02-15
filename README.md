@@ -1,6 +1,6 @@
 # Ultimate Log Silencer
 
-Ultimate Log Silencer mutes assets pipeline log-messages, sort of:
+Ultimate Log Silencer can clear development logs and mutes assets pipeline log-messages, sort of:
 
 ```log
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-13 13:24:04 +0400
@@ -34,6 +34,10 @@ config.ultimate_log_silencer.assets_logger_off = false
 config.ultimate_log_silencer.rack_logger_assets_off = true
 # RegExp for detect request to assets.
 config.ultimate_log_silencer.assets_path_regexp = /^\/assets\//
+# Allow remove logs exceeded max_log_size.
+config.ultimate_log_silencer.clear_logs = false
+# Max allowed log size.
+config.ultimate_log_silencer.max_log_size = 2.megabytes
 ```
 
 ## License
