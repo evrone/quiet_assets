@@ -2,6 +2,7 @@ module Ultimate
   module Log::Silencer
 
     class Configuration
+      require "active_support/core_ext/numeric/bytes"
 
       # Assign null-logger for assets.
       attr_accessor :assets_logger_off
