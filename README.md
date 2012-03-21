@@ -1,44 +1,27 @@
-# Ultimate Log Silencer
+# Quiet assets
 
-Ultimate Log Silencer can clear development logs and mutes assets pipeline log-messages, sort of:
+Quiet assets turn off assets pipeline log, kind of:
 
-```log
-Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-13 13:24:04 +0400
-Served asset /application.js - 304 Not Modified (8ms)
-```
+    Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-13 13:24:04 +0400
+    Served asset /application.js - 304 Not Modified (8ms)
 
-Support Ruby on Rails 3.1, 3.2.
+Support Ruby on Rails ~> 3.1
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'ultimate-log-silencer'
+    gem 'quiet_assets'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install ultimate-log-silencer
-
 ## Usage
 
-Nothing more, but you can change some options:
+Nothing to do, but if you want to temporarily turn on back assets' log just write:
 
-```ruby
-# Assign null-logger for assets.
-config.ultimate_log_silencer.assets_logger_off = false
-# Off messages from Rack by request path.
-config.ultimate_log_silencer.rack_logger_assets_off = true
-# RegExp for detect request to assets.
-config.ultimate_log_silencer.assets_path_regexp = /^\/assets\//
-# Allow remove logs exceeded max_log_size.
-config.ultimate_log_silencer.clear_logs = false
-# Max allowed log size.
-config.ultimate_log_silencer.max_log_size = 2.megabytes
-```
+    config.quite_assets = true
 
 ## License
 
@@ -47,4 +30,4 @@ Dual licensed under the MIT and GPL licenses:
 + http://www.opensource.org/licenses/mit-license.php
 + http://www.gnu.org/licenses/gpl.html
 
-Copyright © 2011-2012 Dmitry KODer Karpunun / Evrone.com
+Copyright © 2011-2012 Dmitry [KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
