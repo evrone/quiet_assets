@@ -11,7 +11,7 @@ Support Ruby on Rails ~> 3.1
 
 Add this line to your application's Gemfile:
 
-    gem 'quiet_assets'
+    gem 'quiet_assets', :group => :development
 
 And then execute:
 
