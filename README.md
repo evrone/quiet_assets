@@ -21,7 +21,7 @@ And then execute:
 
 Nothing to do, but if you want to temporarily turn on back assets' log just write:
 
-    config.quite_assets = true
+    config.quite_assets = false
 
 ## License
 
@@ -30,4 +30,4 @@ Dual licensed under the MIT and GPL licenses:
 + http://www.opensource.org/licenses/mit-license.php
 + http://www.gnu.org/licenses/gpl.html
 
-Copyright © 2011-2012 Dmitry [KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
+Copyright © 2011-2012 Dmitry [@KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [@route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
