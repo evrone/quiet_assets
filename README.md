@@ -21,7 +21,7 @@ And then execute:
 
 Nothing to do, but if you want to temporarily turn on back assets' log just write:
 
-    config.quite_assets = false
+    config.quiet_assets = false
 
 ## License
 
