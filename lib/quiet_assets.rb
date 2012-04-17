@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require "quiet_assets/version"
 
 module QuietAssets
@@ -16,7 +17,7 @@ module QuietAssets
           def call_with_quiet_assets(env)
             old_logger_level, level = Rails.logger.level, Logger::ERROR
             # Increase log level because of messages that have a low level should not be displayed
-            Rails.logger.level = level if env['PATH_INFO'].index(ASSETS_PREFIX) == 0
+            Rails.logger.level = level if env['PATH_INFO'].index(ASSETS_PREFIX)
             call_without_quiet_assets(env)
           ensure
             # Return back
