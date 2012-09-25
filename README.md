@@ -25,7 +25,7 @@ Nothing to do, but if you want to temporarily turn on back assets' log just writ
 
 ## License
 
-Dual licensed under the MIT and GPL licenses:
+Dual licensed under the MIT or GPL licenses:
 
 + http://www.opensource.org/licenses/mit-license.php
 + http://www.gnu.org/licenses/gpl.html
