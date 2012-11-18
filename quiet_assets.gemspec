@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.description   = "Quiet assets turn off rails assets log."
   gem.summary       = "Turn off rails assets log."
 
-  gem.files         = `git ls-files`.split("\n")
+  gem.files         = %w(LICENSE README.md lib/quiet_assets.rb lib/quiet_assets/version.rb quiet_assets.gemspec)
   gem.require_paths = ["lib"]
 
   gem.add_dependency "railties", ">= 3.1", "< 5.0"
