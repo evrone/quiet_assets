@@ -1,11 +1,9 @@
-require "quiet_assets/version"
-
 module QuietAssets
   class Engine < ::Rails::Engine
     # Set as true but user can override it
     config.quiet_assets = true
 
-    initializer "quiet_assets", :after => "sprockets.environment" do |app|
+    initializer 'quiet_assets', :after => 'sprockets.environment' do |app|
       if app.config.quiet_assets == true
         # Parse PATH_INFO by assets prefix
         ASSETS_PREFIX = "/#{app.config.assets.prefix[/\A\/?(.*?)\/?\z/, 1]}/"
