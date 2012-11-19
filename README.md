@@ -9,7 +9,8 @@ Support Ruby on Rails ~> 3.1
 
 ## Installation
 
-Add this line to your application's Gemfile:
+We recommend you to use it only for development.
+Add this line to development group in your Gemfile:
 
     gem 'quiet_assets', :group => :development
 
