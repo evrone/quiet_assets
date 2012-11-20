@@ -33,7 +33,7 @@ class HelperTest < Test::Unit::TestCase
     @app.initialize!
 
     Rails.logger = Logger.new(@stdout)
-    Rails.logger.formatter = ->(s, d, p, m) { "#{m}\n" }
+    Rails.logger.formatter = lambda { |s, d, p, m| "#{m}\n" }
   end
 
   def test_assets_url
