@@ -5,7 +5,7 @@ Quiet assets turn off assets pipeline log, kind of:
     Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-13 13:24:04 +0400
     Served asset /application.js - 304 Not Modified (8ms)
 
-Support Ruby on Rails ~> 3.1
+Support Ruby on Rails >= 3.1
 
 ## Installation
 
