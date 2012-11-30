@@ -1,4 +1,5 @@
 # Quiet assets
+[![Continuous Integration status](https://secure.travis-ci.org/evrone/quiet_assets.png)](http://travis-ci.org/evrone/quiet_assets)
 
 Quiet assets turn off assets pipeline log, kind of:
 
