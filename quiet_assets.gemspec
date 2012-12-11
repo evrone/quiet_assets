@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
 
   gem.files         = %w(LICENSE README.md lib/quiet_assets.rb quiet_assets.gemspec)
   gem.require_paths = %w(lib)
-  gem.test_files    = %w(tests/test_quiet_assets.rb)
+  gem.test_files    = %w(test/test_quiet_assets.rb)
 
   gem.add_dependency 'railties', '>= 3.1', '< 5.0'
   gem.add_development_dependency 'rake'
