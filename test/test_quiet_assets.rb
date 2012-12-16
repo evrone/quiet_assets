@@ -17,10 +17,10 @@ end
 class HelperTest < Test::Unit::TestCase
   include ActiveSupport::Testing::Isolation
 
-  attr_reader :app, :stdout
+  attr_reader :app, :output
 
   def setup
-    @stdout = StringIO.new
+    @output = StringIO.new
 
     # Ruby 1.8 doesn't call self.inherited inside Class.new
     # Config and routes are unreacheable inside the block here.
@@ -35,22 +35,46 @@ class HelperTest < Test::Unit::TestCase
         get 'assets/picture' => 'home#index'
       }
     end
+  end
+
+  def initialize!(&block)
+    app.configure(&block) if block_given?
 
     app.initialize!
 
-    Rails.logger = Logger.new(stdout)
+    Rails.logger = Logger.new(output)
     Rails.logger.formatter = lambda { |s, d, p, m| "#{m}\n" }
   end
 
-  def test_assets_url
+  def test_assets_url_with_option_by_default
+    initialize!
+
     app.call Rack::MockRequest.env_for('/assets/picture')
-    stdout.rewind
-    assert_equal '', stdout.read
+
+    assert_equal '', output.string
+  end
+
+  def test_assets_url_with_turned_on_option
+    initialize! { config.quiet_assets = true }
+
+    app.call Rack::MockRequest.env_for('/assets/picture')
+
+    assert_equal '', output.string
+  end
+
+  def test_assets_url_with_turned_off_option
+    initialize! { config.quiet_assets = false }
+
+    app.call Rack::MockRequest.env_for('/assets/picture')
+
+    assert_match /Started GET \"\/assets\/picture\" for  at/, output.string
   end
 
   def test_regular_url
+    initialize!
+
     app.call Rack::MockRequest.env_for('/')
-    stdout.rewind
-    assert_match /Started GET \"\/\" for  at/, stdout.read
+
+    assert_match /Started GET \"\/\" for  at/, output.string
   end
 end
