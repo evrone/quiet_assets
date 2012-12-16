@@ -30,7 +30,7 @@ class HelperTest < Test::Unit::TestCase
       config.active_support.deprecation = :notify
       config.secret_token = '685e1a60792fa0d036a82a52c0f97e42'
 
-      routes.append {
+      routes {
         root :to => 'home#index'
         get 'assets/picture' => 'home#index'
       }
@@ -46,10 +46,14 @@ class HelperTest < Test::Unit::TestCase
     Rails.logger.formatter = lambda { |s, d, p, m| "#{m}\n" }
   end
 
+  def request(uri)
+    Rack::MockRequest.env_for(uri)
+  end
+
   def test_assets_url_with_option_by_default
     initialize!
 
-    app.call Rack::MockRequest.env_for('/assets/picture')
+    app.call request('/assets/picture')
 
     assert_equal '', output.string
   end
@@ -57,7 +61,7 @@ class HelperTest < Test::Unit::TestCase
   def test_assets_url_with_turned_on_option
     initialize! { config.quiet_assets = true }
 
-    app.call Rack::MockRequest.env_for('/assets/picture')
+    app.call request('/assets/picture')
 
     assert_equal '', output.string
   end
@@ -65,7 +69,7 @@ class HelperTest < Test::Unit::TestCase
   def test_assets_url_with_turned_off_option
     initialize! { config.quiet_assets = false }
 
-    app.call Rack::MockRequest.env_for('/assets/picture')
+    app.call request('/assets/picture')
 
     assert_match /Started GET \"\/assets\/picture\" for  at/, output.string
   end
@@ -73,7 +77,7 @@ class HelperTest < Test::Unit::TestCase
   def test_regular_url
     initialize!
 
-    app.call Rack::MockRequest.env_for('/')
+    app.call request('/')
 
     assert_match /Started GET \"\/\" for  at/, output.string
   end
