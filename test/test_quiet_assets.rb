@@ -29,6 +29,7 @@ class HelperTest < Test::Unit::TestCase
     app.configure do
       config.active_support.deprecation = :notify
       config.secret_token = '685e1a60792fa0d036a82a52c0f97e42'
+      config.eager_load = false
 
       routes {
         root :to => 'home#index'
