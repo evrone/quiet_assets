@@ -4,8 +4,8 @@ Gem::Specification.new do |gem|
   gem.authors       = ['Dmitry Karpunin', 'Dmitry Vorotilin']
   gem.email         = ['koderfunk@gmail.com', 'd.vorotilin@gmail.com']
   gem.homepage      = 'http://github.com/evrone/quiet_assets'
-  gem.description   = 'Quiet assets turn off rails assets log.'
-  gem.summary       = 'Turn off rails assets log.'
+  gem.description   = 'Quiet Assets turns off Rails asset pipeline log.'
+  gem.summary       = 'Turns off Rails asset pipeline log.'
 
   gem.files         = %w(LICENSE README.md lib/quiet_assets.rb quiet_assets.gemspec)
   gem.require_paths = %w(lib)
