@@ -6,6 +6,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'http://github.com/evrone/quiet_assets'
   gem.description   = 'Quiet Assets turns off Rails asset pipeline log.'
   gem.summary       = 'Turns off Rails asset pipeline log.'
+  gem.licenses      = ['MIT', 'GPL']
 
   gem.files         = %w(LICENSE README.md lib/quiet_assets.rb quiet_assets.gemspec)
   gem.require_paths = %w(lib)
