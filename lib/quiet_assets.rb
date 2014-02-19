@@ -16,13 +16,13 @@ module QuietAssets
       Rails::Rack::Logger.class_eval do
         def call_with_quiet_assets(env)
           begin
-            env[KEY] = Rails.logger.level
             if env['PATH_INFO'].start_with?(ASSETS_PREFIX)
+              env[KEY] = Rails.logger.level
               Rails.logger.level = Logger::ERROR
             end
             call_without_quiet_assets(env)
           ensure
-            Rails.logger.level = env[KEY]
+            Rails.logger.level = env[KEY] if env[KEY]
           end
         end
         alias_method_chain :call, :quiet_assets
