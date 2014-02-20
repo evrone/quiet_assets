@@ -67,12 +67,37 @@ class HelperTest < Test::Unit::TestCase
     assert_equal '', output.string
   end
 
+  def test_in_multi_thread_env
+    initialize! { config.quiet_assets = true }
+
+    th1 = Thread.new do
+      sleep 0.1
+      app.call request('/assets/picture')
+    end
+
+    th2 = Thread.new do
+      sleep 0.1
+      app.call request('/')
+    end
+
+    th3 = Thread.new do
+      sleep 0.1
+      app.call request('/assets/picture')
+    end
+
+    [th1, th2, th3].map{|i| i.join }
+
+    n = output.string.lines.select{|i| i.match(/Started GET "\/"/) }
+
+    assert_equal n.size, 1
+  end
+
   def test_assets_url_with_turned_off_option
     initialize! { config.quiet_assets = false }
 
     app.call request('/assets/picture')
 
-    assert_match /Started GET \"\/assets\/picture\" for  at/, output.string
+    assert_match(/Started GET \"\/assets\/picture\" for  at/, output.string)
   end
 
   def test_regular_url
@@ -80,6 +105,6 @@ class HelperTest < Test::Unit::TestCase
 
     app.call request('/')
 
-    assert_match /Started GET \"\/\" for  at/, output.string
+    assert_match(/Started GET \"\/\" for  at/, output.string)
   end
 end
