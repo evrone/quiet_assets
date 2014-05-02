@@ -107,4 +107,12 @@ class HelperTest < Test::Unit::TestCase
 
     assert_match(/Started GET \"\/\" for  at/, output.string)
   end
+
+  def test_full_url_with_couple_slashes
+    initialize!
+
+    app.call request('http://some-url.com//assets/picture')
+
+    assert_equal '', output.string
+  end
 end
