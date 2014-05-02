@@ -8,7 +8,7 @@ module QuietAssets
     initializer 'quiet_assets', :after => 'sprockets.environment' do |app|
       next unless app.config.quiet_assets
       # Parse PATH_INFO by assets prefix
-      ASSETS_PREFIX = "/#{app.config.assets.prefix[/\A\/?(.*?)\/?\z/, 1]}/"
+      ASSETS_PREFIX = %r[\A/{0,2}#{app.config.assets.prefix}]
       KEY = 'quiet_assets.old_level'
       app.config.assets.logger = false
 
@@ -16,7 +16,7 @@ module QuietAssets
       Rails::Rack::Logger.class_eval do
         def call_with_quiet_assets(env)
           begin
-            if env['PATH_INFO'].start_with?(ASSETS_PREFIX)
+            if env['PATH_INFO'] =~ ASSETS_PREFIX
               env[KEY] = Rails.logger.level
               Rails.logger.level = Logger::ERROR
             end

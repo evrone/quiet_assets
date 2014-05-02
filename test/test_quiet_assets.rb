@@ -54,7 +54,7 @@ class HelperTest < Test::Unit::TestCase
   def test_assets_url_with_option_by_default
     initialize!
 
-    app.call request('/assets/picture')
+    app.call request('http://some-url.com//assets/picture')
 
     assert_equal '', output.string
   end
