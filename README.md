@@ -13,7 +13,7 @@ Support Ruby on Rails >= 3.1
 It is recommended that this gem only be used for development.
 To install, add this line to development group in your Gemfile:
 
-    gem 'quiet_assets', :group => :development
+    gem 'quiet_assets', group: :development
 
 Then, from the command line, run:
 
@@ -33,4 +33,4 @@ Dual licensed under the MIT or GPL licenses:
 + http://www.opensource.org/licenses/mit-license.php
 + http://www.gnu.org/licenses/gpl.html
 
-Copyright © 2011-2012 Dmitry [@KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [@route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
+Copyright © 2011-2014 Dmitry [@KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [@route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
