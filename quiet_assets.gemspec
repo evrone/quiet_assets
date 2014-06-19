@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name          = 'quiet_assets'
-  gem.version       = '1.0.2'
+  gem.version       = '1.0.3'
   gem.authors       = ['Dmitry Karpunin', 'Dmitry Vorotilin']
   gem.email         = ['koderfunk@gmail.com', 'd.vorotilin@gmail.com']
   gem.homepage      = 'http://github.com/evrone/quiet_assets'
