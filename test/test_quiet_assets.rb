@@ -85,7 +85,7 @@ class HelperTest < Test::Unit::TestCase
       app.call request('/assets/picture')
     end
 
-    [th1, th2, th3].map{|i| i.join }
+    [th1, th2, th3].map { |i| i.join }
 
     n = output.string.lines.select{|i| i.match(/Started GET "\/"/) }
 
