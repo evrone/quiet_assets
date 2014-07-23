@@ -34,6 +34,7 @@ class HelperTest < Test::Unit::TestCase
       routes {
         root :to => 'home#index'
         get 'assets/picture' => 'home#index'
+        get 'quiet/this' => 'home#index'
       }
     end
   end
@@ -115,4 +116,37 @@ class HelperTest < Test::Unit::TestCase
 
     assert_equal '', output.string
   end
+
+  def test_quiet_url
+    initialize!
+
+    app.call request('/quiet/this')
+
+    assert_match(/Started GET \"\/quiet\/this\" for  at/, output.string)
+  end
+
+  def test_quiet_url_with_paths_option_as_string_equality
+    initialize! { config.quiet_assets_paths = '/quiet/' }
+
+    app.call request('/quiet/this')
+
+    assert_equal '', output.string
+  end
+
+  def test_quiet_url_with_paths_option_as_string_appending
+    initialize! { config.quiet_assets_paths << '/quiet/' }
+
+    app.call request('/quiet/this')
+
+    assert_equal '', output.string
+  end
+
+  def test_quiet_url_with_paths_option_as_array
+    initialize! { config.quiet_assets_paths += ['/quiet/'] }
+
+    app.call request('/quiet/this')
+
+    assert_equal '', output.string
+  end
+
 end
