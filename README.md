@@ -1,9 +1,9 @@
 # Quiet Assets
-[![Continuous Integration status](https://secure.travis-ci.org/evrone/quiet_assets.png)](http://travis-ci.org/evrone/quiet_assets)
+[![Continuous Integration status](https://api.travis-ci.org/evrone/quiet_assets.svg)](http://travis-ci.org/evrone/quiet_assets)
 
 Quiet Assets turns off the Rails asset pipeline log. This means that it suppresses messages in your development log such as:
 
-    Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-02-13 13:24:04 +0400
+    Started GET "/assets/application.js" for 127.0.0.1 at 2015-01-28 13:35:34 +0300
     Served asset /application.js - 304 Not Modified (8ms)
 
 Support Ruby on Rails >= 3.1
@@ -38,4 +38,4 @@ Dual licensed under the MIT or GPL licenses:
 + http://www.opensource.org/licenses/mit-license.php
 + http://www.gnu.org/licenses/gpl.html
 
-Copyright © 2011-2014 Dmitry [@KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [@route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
+Copyright © 2011-2015 Dmitry [@KODerFunk](https://github.com/KODerFunk) Karpunun, Dmitry [@route](https://github.com/route) Vorotilin / [Evrone.com](http://evrone.com)
