@@ -29,6 +29,7 @@ module QuietAssets
             Rails.logger.level = env[KEY] if env[KEY]
           end
         end
+      end
       
       Rails::Rack::Logger.send(:prepend, RackWithQuietAssets)
     end
