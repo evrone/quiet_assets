@@ -1,6 +1,4 @@
 rvm:
-  - 1.8.7
-  - 1.9.2
   - 1.9.3
   - 2.0
   - 2.1
@@ -16,25 +14,11 @@ gemfile:
 
 matrix:
   exclude:
-    - rvm: 1.8.7
-      gemfile: test/gemfiles/Gemfile.rails-4.0.x
-    - rvm: 1.8.7
-      gemfile: test/gemfiles/Gemfile.rails-4.1.x
-    - rvm: 1.8.7
-      gemfile: test/gemfiles/Gemfile.rails-4.2.x
-    - rvm: 1.8.7
-      gemfile: test/gemfiles/Gemfile.rails-5.0.beta
-    - rvm: 1.9.2
-      gemfile: test/gemfiles/Gemfile.rails-4.0.x
-    - rvm: 1.9.2
-      gemfile: test/gemfiles/Gemfile.rails-4.1.x
-    - rvm: 1.9.2
-      gemfile: test/gemfiles/Gemfile.rails-4.2.x
-    - rvm: 1.9.2
-      gemfile: test/gemfiles/Gemfile.rails-5.0.beta
     - rvm: 1.9.3
       gemfile: test/gemfiles/Gemfile.rails-5.0.beta
     - rvm: 2.0
+      gemfile: test/gemfiles/Gemfile.rails-5.0.beta
+    - rvm: 2.1
       gemfile: test/gemfiles/Gemfile.rails-5.0.beta
     - rvm: 2.2
       gemfile: test/gemfiles/Gemfile.rails-3.2.x 
