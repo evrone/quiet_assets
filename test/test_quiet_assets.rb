@@ -8,6 +8,8 @@ require 'active_support/testing/isolation'
 
 require File.expand_path('../../lib/quiet_assets', __FILE__)
 
+Minitest::Test = MiniTest::Unit::TestCase unless defined?(Minitest::Test)
+
 class HomeController < ActionController::Base
   def index
     render :text => 'Hi there!'
