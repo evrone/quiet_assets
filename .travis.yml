@@ -5,7 +5,7 @@ rvm:
   - 1.9.3
   - 2.0
   - 2.1
-  - 2.2
+  - 2.2.3
 
 gemfile:
   - test/gemfiles/Gemfile.rails-3.1.x
@@ -23,8 +23,8 @@ matrix:
       gemfile: test/gemfiles/Gemfile.rails-5.0.beta
     - rvm: 2.1
       gemfile: test/gemfiles/Gemfile.rails-5.0.beta
-    - rvm: 2.2
-      gemfile: test/gemfiles/Gemfile.rails-3.2.x 
+    - rvm: 2.2.3
+      gemfile: test/gemfiles/Gemfile.rails-3.2.x
 
 notifications:
   email: false
