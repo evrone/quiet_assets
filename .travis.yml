@@ -24,6 +24,8 @@ matrix:
     - rvm: 2.1
       gemfile: test/gemfiles/Gemfile.rails-5.0.beta
     - rvm: 2.2.3
+      gemfile: test/gemfiles/Gemfile.rails-3.1.x
+    - rvm: 2.2.3
       gemfile: test/gemfiles/Gemfile.rails-3.2.x
 
 notifications:
