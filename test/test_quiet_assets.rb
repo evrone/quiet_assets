@@ -92,7 +92,7 @@ class HelperTest < MiniTest::Test
 
     n = output.string.lines.select{|i| i.match(/Started GET "\/"/) }
 
-    assert_equal n.size, 1
+    assert_equal 1, n.size
   end
 
   def test_assets_url_with_turned_off_option
