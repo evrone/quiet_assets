@@ -1,6 +1,23 @@
 # Quiet Assets
 [![Continuous Integration status](https://api.travis-ci.org/evrone/quiet_assets.svg)](http://travis-ci.org/evrone/quiet_assets)
 
+## Deprecation
+
+As of `sprockets-rails` version `3.1.0`, used in current versions of rails, this gem is deprecated.
+
+The asset pipeline now supports a `quiet` option which suppresses output of asset requests:
+
+```
+# config/environments/development.rb
+
+config.assets.quiet = true
+```
+
+Relevant PR: https://github.com/rails/sprockets-rails/pull/355
+
+
+## Info
+
 Quiet Assets turns off the Rails asset pipeline log. This means that it suppresses messages in your development log such as:
 
     Started GET "/assets/application.js" for 127.0.0.1 at 2015-01-28 13:35:34 +0300

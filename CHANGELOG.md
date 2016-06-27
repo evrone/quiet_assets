@@ -1,3 +1,8 @@
+1.1.1
+=====
+
+Add deprecation message. Replaced by a config in `sprockets-rails` version `3.1.0`
+
 1.1.0
 =====
 
