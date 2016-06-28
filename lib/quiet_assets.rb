@@ -17,20 +17,21 @@ module QuietAssets
       app.config.assets.logger = false
 
       # Just create an alias for call in middleware
-      Rails::Rack::Logger.class_eval do
-        def call_with_quiet_assets(env)
+      module RackWithQuietAssets
+        def call(env)
           begin
             if env['PATH_INFO'] =~ ASSETS_REGEX
               env[KEY] = Rails.logger.level
               Rails.logger.level = Logger::ERROR
             end
-            call_without_quiet_assets(env)
+            super(env)
           ensure
             Rails.logger.level = env[KEY] if env[KEY]
           end
         end
-        alias_method_chain :call, :quiet_assets
       end
+      
+      Rails::Rack::Logger.send(:prepend, RackWithQuietAssets)
     end
   end
 end
