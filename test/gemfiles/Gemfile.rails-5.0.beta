@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gemspec :path => './../..'
+
+gem 'railties', :git => 'git://github.com/rails/rails.git'
+gem 'sprockets-rails'

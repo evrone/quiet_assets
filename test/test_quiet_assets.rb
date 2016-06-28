@@ -3,10 +3,12 @@ require 'rubygems'
 require 'rails'
 require 'rails/all'
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'active_support/testing/isolation'
 
 require File.expand_path('../../lib/quiet_assets', __FILE__)
+
+MiniTest::Test = MiniTest::Unit::TestCase unless defined?(MiniTest::Test)
 
 class HomeController < ActionController::Base
   def index
@@ -14,7 +16,7 @@ class HomeController < ActionController::Base
   end
 end
 
-class HelperTest < Test::Unit::TestCase
+class HelperTest < MiniTest::Test
   include ActiveSupport::Testing::Isolation
 
   attr_reader :app, :output
@@ -90,7 +92,7 @@ class HelperTest < Test::Unit::TestCase
 
     n = output.string.lines.select{|i| i.match(/Started GET "\/"/) }
 
-    assert_equal n.size, 1
+    assert_equal 1, n.size
   end
 
   def test_assets_url_with_turned_off_option
