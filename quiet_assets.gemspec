@@ -20,7 +20,7 @@ This is the default for new rails apps."
   gem.require_paths = %w(lib)
   gem.test_files    = %w(test/test_quiet_assets.rb)
 
-  gem.add_dependency 'railties', '>= 3.1', '< 5.0'
+  gem.add_dependency 'railties', '>= 3.1', '<= 5.3'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'tzinfo'
 end
