@@ -1,7 +1,4 @@
-# Quiet Assets
-[![Continuous Integration status](https://api.travis-ci.org/evrone/quiet_assets.svg)](http://travis-ci.org/evrone/quiet_assets)
-
-## Deprecation
+# PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED
 
 As of `sprockets-rails` version `3.1.0`, used in current versions of rails, this gem is deprecated.
 
@@ -15,6 +12,8 @@ config.assets.quiet = true
 
 Relevant PR: https://github.com/rails/sprockets-rails/pull/355
 
+# Quiet Assets
+[![Continuous Integration status](https://api.travis-ci.org/evrone/quiet_assets.svg)](http://travis-ci.org/evrone/quiet_assets)
 
 ## Info
 
