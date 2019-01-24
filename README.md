@@ -60,7 +60,7 @@ Please read [Code of Conduct](CODE-OF-CONDUCT.md) and [Contributing Guidelines](
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/evrone/quiet_assets/tags). 
 
 ## Changelog
 
@@ -71,7 +71,7 @@ The changelog is [here](CHANGELOG.md).
 * [Dmitry Karpunin](https://github.com/KODerFunk)
 * [Dmitry Vorotilin](https://github.com/route) 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/evrone/quiet_assets/contributors) who participated in this project.
 
 ## License
 
