@@ -26,6 +26,8 @@ Quiet Assets turns off the Rails asset pipeline log. This means that it suppress
        alt="Sponsored by Evrone" width="231">
 </a>
 
+Developed by <a href="https://evrone.com/quietassets?utm_source=github&utm_campaign=quietassets">Evrone team</a>.
+
 ## Getting Started
 
 ### Prerequisites
